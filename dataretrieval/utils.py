@@ -155,7 +155,7 @@ class BaseMetadata:
 def query(url, payload, delimiter=",", ssl_check=True):
     """Send a query.
 
-    Wrapper for requests.get that handles errors, converts listed
+    Wrapper for requests.post that handles errors, converts listed
     query parameters to comma separated strings, and returns response.
 
     Parameters
@@ -163,7 +163,7 @@ def query(url, payload, delimiter=",", ssl_check=True):
     url: string
         URL to query
     payload: dict
-        query parameters passed to ``requests.get``
+        query parameters passed to ``requests.post``
     delimiter: string
         delimiter to use with lists
     ssl_check: bool
@@ -173,7 +173,7 @@ def query(url, payload, delimiter=",", ssl_check=True):
     Returns
     -------
     string: query response
-        The response from the API query ``requests.get`` function call.
+        The response from the API query ``requests.post`` function call.
     """
 
     for key, value in payload.items():
