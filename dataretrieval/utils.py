@@ -185,7 +185,7 @@ def query(url, payload, delimiter=",", ssl_check=True):
     # define the user agent for the query
     user_agent = {"user-agent": f"python-dataretrieval/{dataretrieval.__version__}"}
 
-    response = requests.get(url, params=payload, headers=user_agent, verify=ssl_check)
+    response = requests.post(url, params=payload, headers=user_agent, verify=ssl_check)
 
     if response.status_code == 400:
         raise ValueError(
